@@ -147,7 +147,7 @@ median(AggDataByDay$x)
 
 *Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?*
 
-The values are similar to those obtained for the unimputed data set (ignoring the NAs).  This is good because we don't want the imputation to alter the distribution of the dataset.  
+The values are similar to those obtained for the unimputed data set (ignoring the NAs).The impact of imputing the missing data is minimal. This is good because we don't want the imputation to alter the distribution of the dataset. 
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
@@ -172,4 +172,4 @@ xyplot(Mean ~ Interval | DayType, MeanByDayType,
        layout=c(1,2))
 ```
 
-We can see by the panel plot above that there is less activity in the mornings on weekends - perhaps this individual likes to sleep in on weekends?
+We can see by the panel plot above that there is less activity in the mornings on weekends,- perhaps this individual likes to sleep in on weekends? Also on weekends, there is more activity at during the day between about 10am and 8pm, sugggesting that the individual is more sedentary during the week.  

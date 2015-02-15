@@ -1,4 +1,9 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
 
 ## Load required libraries
 
@@ -103,7 +108,7 @@ AggDataByDay <-aggregate(SubsetData$steps, by=list(SubsetData$date), FUN=sum, na
 hist(AggDataByDay$x, breaks=10, main="Histogram of total number of steps per day", xlab="number of steps")
 ```
 
-![](PA1_template_files/figure-html/histSteps-1.png) 
+![plot of chunk histSteps](figure/histSteps-1.png) 
 
 *3. Calculate and report the mean and median of the total number of steps taken per day*
 
@@ -138,7 +143,7 @@ names(MeanByInterval)<- c("Interval","Mean")
 xyplot(Mean ~ Interval, MeanByInterval,type="l", main="Average number of steps per 5 minute interval")
 ```
 
-![](PA1_template_files/figure-html/AveDailyActivity-1.png) 
+![plot of chunk AveDailyActivity](figure/AveDailyActivity-1.png) 
 
 
 *2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?*
@@ -222,7 +227,7 @@ SumDataByDay <-aggregate(ImputedData$steps, by=list(ImputedData$date), FUN=sum, 
 hist(SumDataByDay$x, breaks=10, main="Histogram of total number of steps per day", xlab="number of steps")
 ```
 
-![](PA1_template_files/figure-html/histStepsImputed-1.png) 
+![plot of chunk histStepsImputed](figure/histStepsImputed-1.png) 
 
 
 **Mean total number of steps per day**
@@ -248,7 +253,7 @@ median(AggDataByDay$x)
 
 *Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?*
 
-The values are similar to those obtained for the unimputed data set (ignoring the NAs).  This is good because we don't want the imputation to alter the distribution of the dataset.  
+The values are similar to those obtained for the unimputed data set (ignoring the NAs).The impact of imputing the missing data is minimal. This is good because we don't want the imputation to alter the distribution of the dataset. 
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
@@ -280,6 +285,6 @@ xyplot(Mean ~ Interval | DayType, MeanByDayType,
        layout=c(1,2))
 ```
 
-![](PA1_template_files/figure-html/Weekdays-1.png) 
+![plot of chunk Weekdays](figure/Weekdays-1.png) 
 
-We can see by the panel plot above that there is less activity in the mornings on weekends - perhaps this individual likes to sleep in on weekends?
+We can see by the panel plot above that there is less activity in the mornings on weekends,- perhaps this individual likes to sleep in on weekends? Also on weekends, there is more activity at during the day between about 10am and 8pm, sugggesting that the individual is more sedentary during the week.  
